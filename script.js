@@ -17,3 +17,12 @@ const operate = (operator, a, b) => {
 		divide(a,b);
 	}
 }
+
+const display = document.querySelector('#display');
+const number = document.querySelectorAll('.number');
+
+number.forEach((e)=>{
+	e.addEventListener('click', ()=>{
+		display.textContent = e.textContent;
+	})
+})
