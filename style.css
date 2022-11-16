@@ -21,7 +21,8 @@ body {
     
 }
 
-#display {
+#display,
+#display2 {
     width: 12rem;
     outline: 1px solid black;
     padding: 3rem;
