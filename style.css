@@ -6,6 +6,10 @@ button {
     border-radius: 2rem;
 }
 
+button:hover {
+    background-color: rgba(0, 0, 0, 0.268);
+}
+
 body {
     display:flex;
     flex-direction: column;
