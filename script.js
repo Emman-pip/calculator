@@ -19,10 +19,17 @@ const operate = (operator, a, b) => {
 }
 
 const display = document.querySelector('#display');
+const clear = document.querySelector('.clear');
 const number = document.querySelectorAll('.number');
+
 
 number.forEach((e)=>{
 	e.addEventListener('click', ()=>{
-		display.textContent = e.textContent;
+		display.textContent = display.textContent + e.textContent;
+		let displayValue = display.textContent
 	})
+})
+
+clear.addEventListener('click', ()=>{
+	display.textContent = ''
 })
