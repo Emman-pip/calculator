@@ -110,3 +110,121 @@ equal.addEventListener('click', function(){
 	})
 
 
+/////////////////////////////////////////////
+
+window.addEventListener('keydown', (e)=>{
+    console.log(e.key)
+    if (e.key == 0){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 1){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 2){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 3){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 4){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 5){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 6){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 7){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 8){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 9){
+        display.textContent = display.textContent+e.key
+    } else if (e.key == 'Backspace'){
+        x = display.textContent;
+	display.textContent = x.slice(0,display.textContent.length-1);
+    } else if (e.key == '+'){
+        if (display2.textContent == '') {
+			display2.textContent = parseFloat(display.textContent);
+		} else if (display2.textContent.includes('+')){
+			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+			op = '+';
+		}else if (display2.textContent.includes('-')){
+			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+			op = '-';
+		}else if (display2.textContent.includes('*')){
+			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+			op = '*';
+		}else if (display2.textContent.includes('/')){
+			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+			op = '/';
+		}
+		display.textContent = '';
+        display2.textContent=display2.textContent+'+'
+    }  else if (e.key == '-'){
+        if (display2.textContent == '') {
+			display2.textContent = parseFloat(display.textContent);
+		} else if (display2.textContent.includes('+')){
+			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+			op = '+';
+		}else if (display2.textContent.includes('-')){
+			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+			op = '-';
+		}else if (display2.textContent.includes('*')){
+			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+			op = '*';
+		}else if (display2.textContent.includes('/')){
+			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+			op = '/';
+		}
+		display.textContent = '';
+        display2.textContent=display2.textContent+'-'
+    }  else if (e.key == '*'){
+        if (display2.textContent == '') {
+			display2.textContent = parseFloat(display.textContent);
+		} else if (display2.textContent.includes('+')){
+			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+			op = '+';
+		}else if (display2.textContent.includes('-')){
+			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+			op = '-';
+		}else if (display2.textContent.includes('*')){
+			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+			op = '*';
+		}else if (display2.textContent.includes('/')){
+			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+			op = '/';
+		}
+		display.textContent = '';
+        display2.textContent=display2.textContent+'*'
+    }  else if (e.key == '/'){
+        if (display2.textContent == '') {
+			display2.textContent = parseFloat(display.textContent);
+		} else if (display2.textContent.includes('+')){
+			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+			op = '+';
+		}else if (display2.textContent.includes('-')){
+			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+			op = '-';
+		}else if (display2.textContent.includes('*')){
+			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+			op = '*';
+		}else if (display2.textContent.includes('/')){
+			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+			op = '/';
+		}
+		display.textContent = '';
+        display2.textContent=display2.textContent+'/'
+    }  else if (e.key == 'Enter'){
+        if (display2.textContent == '') {
+			display2.textContent = parseFloat(display.textContent);
+		} else if (display2.textContent.includes('+')){
+			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+			op = '+';
+		}else if (display2.textContent.includes('-')){
+			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+			op = '-';
+		}else if (display2.textContent.includes('*')){
+			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+			op = '*';
+		}else if (display2.textContent.includes('/')){
+			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+			op = '/';
+		}
+		display.textContent = '';
+    } 
+})
