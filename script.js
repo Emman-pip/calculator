@@ -6,6 +6,26 @@ const equal = document.querySelector('.equal');
 const period = document.querySelector('.period')
 const del = document.querySelector('.del')
 
+function calculate(){
+	if (display2.textContent == '') {
+		display2.textContent = parseFloat(display.textContent);
+	} else if (display2.textContent.includes('+')){
+		display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
+		op = '+';
+	}else if (display2.textContent.includes('-')){
+		display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
+		op = '-';
+	}else if (display2.textContent.includes('*')){
+		display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
+		op = '*';
+	}else if (display2.textContent.includes('/')){
+		display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
+		op = '/';
+	}
+	display.textContent = '';
+}
+
+
 // querySelectorsAll
 const number = document.querySelectorAll('.number');
 const operator = document.querySelectorAll('.operator');
@@ -48,22 +68,7 @@ del.addEventListener('click', ()=>{
 
 operator.forEach((e)=>{
 	e.addEventListener('click', function(){
-		if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+		calculate()
 	})})
 
 //operators
@@ -91,29 +96,13 @@ divid.addEventListener('click', ()=>{
 
 
 equal.addEventListener('click', function(){
-		if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+		calculate()
 	})
 
 
 /////////////////////////////////////////////
 
 window.addEventListener('keydown', (e)=>{
-    console.log(e.key)
     if (e.key == 0){
         display.textContent = display.textContent+e.key
     } else if (e.key == 1){
@@ -136,95 +125,25 @@ window.addEventListener('keydown', (e)=>{
         display.textContent = display.textContent+e.key
     } else if (e.key == 'Backspace'){
         x = display.textContent;
-	display.textContent = x.slice(0,display.textContent.length-1);
+		display.textContent = x.slice(0,display.textContent.length-1);
     } else if (e.key == '+'){
-        if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+        calculate()
         display2.textContent=display2.textContent+'+'
     }  else if (e.key == '-'){
-        if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+        calculate()
         display2.textContent=display2.textContent+'-'
     }  else if (e.key == '*'){
-        if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+        calculate()
         display2.textContent=display2.textContent+'*'
     }  else if (e.key == '/'){
-        if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
+        calculate()
         display2.textContent=display2.textContent+'/'
     }  else if (e.key == 'Enter'){
-        if (display2.textContent == '') {
-			display2.textContent = parseFloat(display.textContent);
-		} else if (display2.textContent.includes('+')){
-			display2.textContent = parseFloat(display2.textContent)+parseFloat(display.textContent);
-			op = '+';
-		}else if (display2.textContent.includes('-')){
-			display2.textContent = parseFloat(display2.textContent)-parseFloat(display.textContent);
-			op = '-';
-		}else if (display2.textContent.includes('*')){
-			display2.textContent = parseFloat(display2.textContent)*parseFloat(display.textContent);
-			op = '*';
-		}else if (display2.textContent.includes('/')){
-			display2.textContent = parseFloat(display2.textContent)/parseFloat(display.textContent);
-			op = '/';
-		}
-		display.textContent = '';
-    } 
+        calculate()
+    } else if (e.key == '.') {
+		if (display.textContent.includes('.')){alert('no more than one period')}
+		
+		else {display.textContent = display.textContent+e.key}
+
+	}
 })
